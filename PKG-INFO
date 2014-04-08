@@ -1,0 +1,14 @@
+Metadata-Version: 1.0
+Name: ScrewFit
+Version: 1.0.4
+Summary: Secondary Structure Determination and Characterization
+Home-page: http://dirac.cnrs-orleans.fr/ScrewFit/
+Author: P. Calligari, G.R. Kneller
+Author-email: paolo.calligari@sissa.it
+License: CeCILL
+Description: ScrewFit is an Open Source program for the determination and
+        characterization of secondary structure of proteins. It provides an
+        efficient description of structural motifs based on simple geometrical
+        assumptions.
+        
+Platform: UNKNOWN

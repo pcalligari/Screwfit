@@ -1,0 +1,83 @@
+**************
+ScrewFit-lite 1.0.1beta
+**************
+
+This program is copyrighted but free to use for anyone 
+under the CeCILL license, see the file LICENSE for details.
+
+ScrewFit is under active development. Expect some surprises, and please
+tell us about any problems you might encounter. 
+
+ScrewFit should work with all major variants of Unix but it has 
+been tested just on Linux machines. 
+
+If you have any questions about ScrewFit that are not answered on the
+Web page mentioned above, please contact the authors.
+
+
+Paolo Calligari
+SISSA
+via Bonomea 265,
+34136 Trieste
+Italy
+
+E-Mail: paolo.calligari@sissa.it
+
+
+Installation
+============
+
+ScrewFit requires the Python interpreter (version 1.6 or higher)
+and the Molecular Modeling Toolkit (MMTK). 
+Make sure that these components work properly before installing ScrewFit.
+
+Then type
+
+    python setup.py install
+
+On most systems this will require root permissions, as by default
+the files will be installed in the same directory as the Python
+interpreter. Other directories can be specified, type
+
+    python setup.py --help install
+
+for explanations. 
+
+
+Usage
+========
+
+To run ScrewFit just type: 
+
+      screwfit "pdbfile name"
+
+INPUT FILE MUST BE A PDB FILE.
+
+
+Output Files
+=============
+
+Results are outputted in separate files, one for each peptide chain
+found in the PDB file which was given as input.
+
+The ScrewFit paramenters are written in a file named using the prefix "SM_data_". 
+The parameters are arranged in columns as follows:
+
+[# COLUMN]: Description
+1 : Residue index
+2 : Residue number as reported in the original PDB file
+3 : Handedness of the screwmotion
+4 : Error given by the fit procedure
+5 : Angular Distance (Delta)
+6 : Local-helix radius (rho) [Units: nm]
+7 : Straightness (sigma)
+8 : NMR model
+
+
+Secondary structure assignements are reported in a FASTA-format
+text file named with the prefix "SecStr_".
+
+A logfile is also dumped.
+
+
+

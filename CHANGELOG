@@ -1,0 +1,49 @@
+1.0.3->1.0.4
+==============
+- Version 1.0.3 was erroneously labeled as "ScrewFitLite".
+- Some minor bugs fixed
+- Secondary structure assignement is given both in stdout and as a FASTA-format text file.
+- README test file is now up-to-date.
+
+1.0.1beta ->1.0.3
+==============
+- Some bugs fixed
+- Secondary structure assignement is now written in a FASTA-format text file. 
+
+
+1.0beta -> 1.0.1beta
+==============
+- A bug producing critical errors in secondary structure assignments was fixed.
+
+
+0.9.4 -> 1.0beta
+==============
+- Secondary structure detection method has been added.
+
+
+0.9.3 -> 0.9.4
+==============
+Improvements:
+- Output is reduced from three to two. All ScrewMotion data are culled in a unique file.
+- A preliminar graphical version through the Matplotlib interface is available.
+- More options are available.
+
+  
+0.9.1 -> 0.9.3
+==============
+Improvements:
+
+- Faster treatment of PDB data.
+- Program code is split into modules to make future improvements easier.
+
+
+0.9.0 -> 0.9.1
+==============
+
+Bug fixes:
+
+- No bugs yet.
+
+Improvements:
+
+- More user-friendly outputs.

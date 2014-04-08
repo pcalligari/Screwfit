@@ -1,0 +1,52 @@
+#!python
+
+#
+# Written by Paolo Calligari (paolo.calligari@sissa.it)
+#
+
+from MMTK import *
+from MMTK.Universe import InfiniteUniverse
+from MMTK.PDB import PDBConfiguration
+from MMTK.PDBMoleculeFactory import PDBMoleculeFactory
+from Scientific.IO.ArrayIO import *
+from sys import argv
+import string
+import os
+
+from SFit.InputReader import *
+from SFit.ScrewMotions import *
+from SFit.SecondaryStructure import DefineSecondaryStructure
+from SFit.Utils import * 
+
+# DEBUG
+import pdb
+
+############################
+#                          #
+#	MAIN PROGRAM       #
+#                          #
+############################
+
+try:
+    spec_file=argv[1]
+except:
+    print ' Input file is needed '
+    quit()
+
+logfile = header(spec_file)
+data = Input_data()
+
+
+print "PDB input file detected \n"
+
+cnf = PDBConfiguration(spec_file, model=0)
+factory = PDBMoleculeFactory.PDBMoleculeFactory(cnf,None, lambda y,x: x.name in ['C','O','N'])
+data.pdb = factory.retrieveMolecules()
+data.output=1
+PDBfile = os.path.basename(spec_file)    
+results, not_avail = screwFitAnalysis(data.pdb)    
+seq1=DefineSecondaryStructure(results)
+dump_logfile(logfile, not_avail)
+FASTAout(data, PDBfile,seq1)
+Sequence_out(data, PDBfile,seq1)
+tail(logfile, PDBfile, results)
