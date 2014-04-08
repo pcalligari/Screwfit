@@ -1,4 +1,4 @@
 Screwfit
 ========
 
-a program for the characterization of pro- tein secondary structures.
+a program for the characterization of protein secondary structures.
